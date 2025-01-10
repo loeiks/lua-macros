@@ -5,7 +5,7 @@ LUA_MACRO_LOCATION := "C:\AHK\keypressed.txt"
     key := FileRead(LUA_MACRO_LOCATION)
 
     ; Configuration for "c" key
-    if (key = "c") {
+    if (key = "num0") {
         Run("calc.exe")
         return
     }
