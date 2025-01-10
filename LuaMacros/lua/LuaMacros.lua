@@ -20,13 +20,13 @@ else
 end
 
 -- This lists connected keyboards
-dev = lmc_get_devices()
-for key, value in pairs(dev) do
-    print(key .. ':')
-    for key2, value2 in pairs(value) do
-        print('  ' .. key2 .. ' = ' .. value2)
-    end
-end
+-- dev = lmc_get_devices()
+-- for key, value in pairs(dev) do
+--     print(key .. ':')
+--     for key2, value2 in pairs(value) do
+--         print('  ' .. key2 .. ' = ' .. value2)
+--     end
+-- end
 
 print('You need to get the identifier code for the keyboard with name "MACROS"')
 print('Then replace the first 0000AAA value in the code with it. This will prevent having to manually identify keyboard every time.')
