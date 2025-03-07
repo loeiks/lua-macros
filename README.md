@@ -3,9 +3,9 @@
 It's really easy to start with LuaMacros just make sure you install the necessary tools:
 
 - [AHK](https://www.autohotkey.com/)
-- [LuaMacros](https://73fb76f9-addf-4969-8e12-3d5bb9494ae6.usrfiles.com/archives/73fb76_2e7c52a159b441a3a848900bde2b6cea.zip)
+- [LuaMacros](https://www.hidmacros.eu/download.php)
 
-If you have clonned this repo (or downloaded it) and installed AHK you are kinda ready. But before everything unzip the [downloaded `luamacros.zip` file](https://73fb76f9-addf-4969-8e12-3d5bb9494ae6.usrfiles.com/archives/73fb76_2e7c52a159b441a3a848900bde2b6cea.zip) to use `LuaMacros.exe` when unzipping, extract all files directly in `lua` folder don't create a new folder for extracted files, or later cut and paste files to `lua` folder.
+If you have clonned this repo (or downloaded it) and installed AHK you are kinda ready. But before everything unzip the [downloaded `luamacros.zip` file](https://www.hidmacros.eu/download.php) to use `LuaMacros.exe` when unzipping, extract all files directly in `lua` folder don't create a new folder for extracted files, or later cut and paste files to `lua` folder.
 
 > You can just open the .zip file and copy everything (or cut with CTRL+X) inside and paste directly inside /lua/ folder then delete the downlaoded .zip file.
 
@@ -68,8 +68,6 @@ To find the paths select the `LuaMacros.exe` file and run `CTRL+SHIFT+C` which w
 After you replaced the paths now run `WindowsKey+R` to launch `Run` on Windows then run this: `shell:startup` which will launch the folder of startup apps in Windows. While pressing `ALT` key drag the `LuaMacrosAutoRunner.ahk` script into that folder to create a shortcut for that `AHK` script.
 
 In this way when you start Windows LuaMacros.exe will start just how you need it in minimized mode.
-
-> It may not start it in minimized mode because it's doing it with a delay of 2sec which might not be enough always, I'm looking for a solution to this but for now just let you know. If your PC fast enough it should work without any problem tho.
 
 ### Step 3: Setup Autolaunch for AHK Scripts (Optional)
 
