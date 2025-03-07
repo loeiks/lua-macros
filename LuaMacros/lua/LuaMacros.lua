@@ -6,7 +6,7 @@
 -- Then, press any key on that keyboard to assign logical name ('MACROS') to macro keyboard
 
 clear()
-local keyboardIdentifier = '0000AAA'
+local keyboardIdentifier = '3ABDDC5D'
 
 -- You need to get the identifier code for the keyboard with name "MACROS"
 -- This appears about halfway through the SystemID item and looks like 1BB382AF or some other alphanumeric combo. 
@@ -20,21 +20,22 @@ else
 end
 
 -- This lists connected keyboards
-dev = lmc_get_devices()
-for key, value in pairs(dev) do
-    print(key .. ':')
-    for key2, value2 in pairs(value) do
-        print('  ' .. key2 .. ' = ' .. value2)
-    end
-end
+-- dev = lmc_get_devices()
+-- for key, value in pairs(dev) do
+--     print(key .. ':')
+--     for key2, value2 in pairs(value) do
+--         print('  ' .. key2 .. ' = ' .. value2)
+--     end
+-- end
 
-print('You need to get the identifier code for the keyboard with name "MACROS"')
-print('Then replace the first 0000AAA value in the code with it. This will prevent having to manually identify keyboard every time.')
+print('Welcome to Customized LuaMacros!\n')
+-- print('You need to get the identifier code for the keyboard with name "MACROS"')
+-- print('Then replace the first 0000AAA value in the code with it. This will prevent having to manually identify keyboard every time.')
 lmc.minimizeToTray = true -- Hide window to tray to keep taskbar tidy  
 
 -- Write pressed keys to TXT file in selected directory
 sendToAHK = function(key)
-    local file = io.open("C:\\AHK\\keypressed.txt", "w")
+    local file = io.open("C:\\Users\\%USERNAME%\\.ahk\\keypresses.txt", "w")
     file:write(key)
     file:flush()
     file:close()
