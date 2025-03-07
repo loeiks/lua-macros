@@ -3,10 +3,10 @@ LUA_MACRO_LOCATION := "C:\Users\%USERNAME%\.ahk\keypresses.txt"
 SendMode("Input")
 
 ; AHK Modifier Keys with Short Symbols:
-; ^ = Ctrl
-; + = Shift
-; ! = Alt
-; # = Windows (Win)
+; ^ = CTRL
+; + = SHIFT
+; ! = ALT
+; # = WINDOWS
 
 ~F24:: {
     key := FileRead(LUA_MACRO_LOCATION)
@@ -16,6 +16,6 @@ SendMode("Input")
         return
     }
 
-    ; Warn user if key is not configured
-    MsgBox("The key you pressed isn't configured in LuaMacros!", "LuaMacros Engine")
+    ; Warn user if key is not configured yet.
+    MsgBox("The key you pressed isn't configured yet in LuaMacros!", "LuaMacros Engine")
 }

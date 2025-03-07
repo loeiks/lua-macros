@@ -1,39 +1,36 @@
--- video explanation is HERE: https://www.youtube.com/watch?v=Arn8ExQ2Gjg
--- note that some of the code has changed since then (it works better now!)
--- Though, I have since abandoned luamacros, in favor of Interception... which i will abandon in favor of QMK.
--- get luamacros HERE: http://www.hidmacros.eu/forum/viewtopic.php?f=10&t=241#p794
--- plug in your 2nd keyboard, load this script into LUAmacros, and press the triangle PLAY button.
--- Then, press any key on that keyboard to assign logical name ('MACROS') to macro keyboard
-
 clear()
-local keyboardIdentifier = '3ABDDC5D'
+local keyboardIdentifier = '0000AAA';
+local yourKeyboard = nil;
 
--- You need to get the identifier code for the keyboard with name "MACROS"
--- This appears about halfway through the SystemID item and looks like 1BB382AF or some other alphanumeric combo. 
--- It's usually 7 or 8 characters long.
--- Once you have this identifier, replace the value of keyboardIdentifier with it
-
-if keyboardIdentifier == '0000AAA' then
+-- Setup Keyboard Identifier
+if keyboardIdentifier == '0000AAA' and yourKeyboard == nil then
     lmc_assign_keyboard('MACROS');
 else
     lmc_device_set_name('MACROS', keyboardIdentifier);
 end
 
--- This lists connected keyboards
--- dev = lmc_get_devices()
--- for key, value in pairs(dev) do
---     print(key .. ':')
---     for key2, value2 in pairs(value) do
---         print('  ' .. key2 .. ' = ' .. value2)
---     end
--- end
+print('--- Welcome to Customized LuaMacros! ---')
+print('--- Please Read SETUP.md File ---\r\n')
+lmc.minimizeToTray = true
 
-print('Welcome to Customized LuaMacros!\n')
--- print('You need to get the identifier code for the keyboard with name "MACROS"')
--- print('Then replace the first 0000AAA value in the code with it. This will prevent having to manually identify keyboard every time.')
-lmc.minimizeToTray = true -- Hide window to tray to keep taskbar tidy  
+-- Show AHK Keyboard ID
+dev = lmc_get_devices()
+local pattern = "#9&(%x+)&"
 
--- Write pressed keys to TXT file in selected directory
+for index, keyboard in pairs(dev) do
+    for key, value in pairs(keyboard) do
+        if key == 'Name' and value == 'MACROS' then
+            local extracted_id = string.match(keyboard.SystemId, pattern)
+            if extracted_id ~= nil then
+                print('Selected Keyboard ID: ' .. extracted_id .. '\r\n')
+            else
+                print('Selected Keyboard ID: ' .. keyboard.SystemId)
+            end
+        end
+    end
+end
+
+-- Write Keypresses
 sendToAHK = function(key)
     local file = io.open("C:\\Users\\%USERNAME%\\.ahk\\keypresses.txt", "w")
     file:write(key)
@@ -152,8 +149,8 @@ lmc_set_handler('MACROS', function(button, direction)
     end -- ignore key upstrokes. 
     if type(config[button]) == "string" then
         print(' ')
-        print('Your key ID number is:   ' .. button)
-        print('It was assigned string:    ' .. config[button])
+        print('Your key ID number is: ' .. button)
+        print('It was assigned string: ' .. config[button])
         sendToAHK(config[button])
     else
         print(' ')

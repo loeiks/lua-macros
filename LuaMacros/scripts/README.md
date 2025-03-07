@@ -1,0 +1,1 @@
+You can add your own `AHK` scripts in this folder to keep them organized. Or any other folder.
