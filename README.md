@@ -7,6 +7,8 @@ It's really easy to start with LuaMacros just make sure you install the necessar
 
 If you have clonned this repo (or downloaded it) and installed AHK you are kinda ready. But before everything unzip the [downloaded `luamacros.zip` file](https://73fb76f9-addf-4969-8e12-3d5bb9494ae6.usrfiles.com/archives/73fb76_2e7c52a159b441a3a848900bde2b6cea.zip) to use `LuaMacros.exe` when unzipping, extract all files directly in `lua` folder don't create a new folder for extracted files, or later cut and paste files to `lua` folder.
 
+> You can just open the .zip file and copy everything (or cut with CTRL+X) inside and paste directly inside /lua/ folder then delete the downlaoded .zip file.
+
 ---
 
 ### Step 1: Setup LuaMacros.exe and LuaMacros.lua
