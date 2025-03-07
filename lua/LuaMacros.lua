@@ -1,12 +1,11 @@
 clear()
-local keyboardIdentifier = '0000AAA';
 local yourKeyboard = nil;
 
 -- Setup Keyboard Identifier
-if keyboardIdentifier == '0000AAA' and yourKeyboard == nil then
+if yourKeyboard == nil then
     lmc_assign_keyboard('MACROS');
 else
-    lmc_device_set_name('MACROS', keyboardIdentifier);
+    lmc_device_set_name('MACROS', yourKeyboard);
 end
 
 print('--- Welcome to Customized LuaMacros! ---')
