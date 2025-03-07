@@ -14,17 +14,19 @@ print('--- Please Read README.md File ---\r\n')
 lmc.minimizeToTray = true
 
 -- Show AHK Keyboard ID
-dev = lmc_get_devices()
-local pattern = "#9&(%x+)&"
+if yourKeyboard == nil then
+    dev = lmc_get_devices()
+    local pattern = "#9&(%x+)&"
 
-for index, keyboard in pairs(dev) do
-    for key, value in pairs(keyboard) do
-        if key == 'Name' and value == 'MACROS' then
-            local extracted_id = string.match(keyboard.SystemId, pattern)
-            if extracted_id ~= nil then
-                print('Selected Keyboard ID: ' .. extracted_id .. '\r\n')
-            else
-                print('Selected Keyboard ID: ' .. keyboard.SystemId)
+    for index, keyboard in pairs(dev) do
+        for key, value in pairs(keyboard) do
+            if key == 'Name' and value == 'MACROS' then
+                local extracted_id = string.match(keyboard.SystemId, pattern)
+                if extracted_id ~= nil then
+                    print('Selected Keyboard ID: ' .. extracted_id .. '\r\n')
+                else
+                    print('Selected Keyboard ID: ' .. keyboard.SystemId)
+                end
             end
         end
     end
