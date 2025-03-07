@@ -1,8 +1,8 @@
 #Requires AutoHotkey v2.0
 #SingleInstance Force
 
-LuaMacrosExe := "H:\loeiks\ahk\LuaMacros\lua\LuaMacros.exe" ; replace me
-LuaMacrosLua := "H:\loeiks\ahk\LuaMacros\lua\LuaMacros.lua" ; replace me
+LuaMacrosExe := "H:\loeiks\lua-macros\lua\LuaMacros.exe" ; replace me
+LuaMacrosLua := "H:\loeiks\lua-macros\lua\LuaMacros.lua" ; replace me
 
 ; Dynamically create path with run option for Windows.
 AutoRun := Format("{1} -r {2}", LuaMacrosExe, LuaMacrosLua)

@@ -10,7 +10,7 @@ else
 end
 
 print('--- Welcome to Customized LuaMacros! ---')
-print('--- Please Read SETUP.md File ---\r\n')
+print('--- Please Read README.md File ---\r\n')
 lmc.minimizeToTray = true
 
 -- Show AHK Keyboard ID
