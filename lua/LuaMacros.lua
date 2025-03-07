@@ -33,7 +33,7 @@ end
 
 -- Write Keypresses
 sendToAHK = function(key)
-    local file = io.open("C:\\Users\\%USERNAME%\\.ahk\\keypresses.txt", "w")
+    local file = io.open("C:\\Users\\%USERNAME%\\.ahk\\keypresses.txt", "w") -- replace me!!!
     file:write(key)
     file:flush()
     file:close()

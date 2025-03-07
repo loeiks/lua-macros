@@ -21,6 +21,10 @@ InstallKeybdHook()
 ; The default value is usually sufficient, but it can be increased if needed.
 A_MaxHotkeysPerInterval := 2000
 
+; Forces a window to become active, even if it's already active.
+; This is useful in situations where a window needs to be brought to the foreground reliably.
+#WinActivateForce
+
 ; Includes the contents of the "macros.ahk" file into this script.
 ; This allows you to organize your code into separate files and reuse code across scripts.
 ; The "macros.ahk" file is expected to contain definitions for macros or functions.

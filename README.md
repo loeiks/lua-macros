@@ -39,7 +39,25 @@ local yourKeyboard = '3ABDDC5D';
 
 Before everything close the LuaMacros.exe and exit it to avoid conflicts then replace the content/string in `yourKeyboard` variable and paste your own keyboard ID that you copied in LuaMacros.lua file (you can use text editor to launch that file) then save that file and close it.
 
-Now you don't need to any other change unless you need to change the keyboard you selected.
+Now follow the step 2 to complete the required setup.
+
+### Step 2: Setup AHK Macros
+
+You can already see the example `AHK` scripts I created in `scripts` folder, you can read the scripts and understand how your main file should start. `luamacros_engine.ahk` is the key file which shows you how your scripts should start, in `macros.ahk` file you can see how I get the keypresses from the txt file we have created before. You also need this to actually understand which key is pressed. And this is the last part that you need to make a change.
+
+Find the path of your keypresses.txt file which should be in `C:\Users\%USERNAME%\.ahk\keypresses.txt` (you can copy paste this into file explorer) and you need to replace that %USERNAME% part with the actual username in your PC. You also need to change the same text in `LuaMacros.lua` file:
+
+```lua
+local file = io.open("C:\\Users\\%USERNAME%\\.ahk\\keypresses.txt", "w") -- replace me!!!
+```
+
+**to**
+
+```lua
+local file = io.open("C:\\Users\\loeiks\\.ahk\\keypresses.txt", "w") -- replace me!!!
+```
+
+After you change that path in both files you are ready.
 
 ### Step 2: Setup Autolaunch (Optional)
 
@@ -50,6 +68,8 @@ To find the paths select the `LuaMacros.exe` file and run `CTRL+SHIFT+C` which w
 After you replaced the paths now run `WindowsKey+R` to launch `Run` on Windows then run this: `shell:startup` which will launch the folder of startup apps in Windows. While pressing `ALT` key drag the `LuaMacrosAutoRunner.ahk` script into that folder to create a shortcut for that `AHK` script.
 
 In this way when you start Windows LuaMacros.exe will start just how you need it in minimized mode.
+
+> It may not start it in minimized mode because it's doing it with a delay of 2sec which might not be enough always, I'm looking for a solution to this but for now just let you know. If your PC fast enough it should work without any problem tho.
 
 ### Step 3: Setup Autolaunch for AHK Scripts (Optional)
 

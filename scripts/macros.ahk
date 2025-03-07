@@ -1,5 +1,5 @@
 #SingleInstance Force
-LUA_MACRO_LOCATION := "C:\Users\%USERNAME%\.ahk\keypresses.txt"
+KEYPRESSES := "C:\Users\%USERNAME%\.ahk\keypresses.txt" ; replace me
 SendMode("Input")
 
 ; AHK Modifier Keys with Short Symbols:
@@ -9,7 +9,7 @@ SendMode("Input")
 ; # = WINDOWS
 
 ~F24:: {
-    key := FileRead(LUA_MACRO_LOCATION)
+    key := FileRead(KEYPRESSES)
 
     if (key = "num1") {
         Run("S:\cross-over.txt")
